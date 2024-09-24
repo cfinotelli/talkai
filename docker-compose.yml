@@ -1,0 +1,13 @@
+name: talkai
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=talkai
+
+
+#  connection-url: postgresql://admin:admin@localhost:5432/talkai
