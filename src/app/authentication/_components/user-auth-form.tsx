@@ -13,12 +13,12 @@ import { signIn } from 'next-auth/react'
 import { type ComponentProps, type SyntheticEvent, useState } from 'react'
 
 interface UserAuthFormProps extends ComponentProps<'div'> {
-	currentSignMode: 'sign-in' | 'sign-up'
+	signMode: 'sign-in' | 'sign-up'
 }
 
 export const UserAuthForm = ({
 	className,
-	currentSignMode,
+	signMode,
 	...props
 }: UserAuthFormProps) => {
 	const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -56,7 +56,7 @@ export const UserAuthForm = ({
 					</div>
 					<Button disabled={isLoading}>
 						{isLoading && <LoadingSpin />}
-						{currentSignMode === 'sign-in'
+						{signMode === 'sign-in'
 							? 'Entrar com e-mail'
 							: 'Criar com e-mail'}
 					</Button>
