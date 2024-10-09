@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/cn'
 import type { ComponentProps } from 'react'
 import { AuthModes } from './auth-modes'
 import { MailLogin } from './mail-login'

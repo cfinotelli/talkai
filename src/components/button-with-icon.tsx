@@ -1,4 +1,4 @@
-import type { Icon } from '@/@types/elements'
+import type { Icon } from '@/~types/elements'
 import type { ComponentProps } from 'react'
 import { LoadingSpin } from './loading-spin'
 import { Button } from './ui/button'

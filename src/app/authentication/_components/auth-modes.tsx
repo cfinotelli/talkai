@@ -1,6 +1,6 @@
-import type { Icon } from '@/@types/elements'
 import { GithubIcon, GoogleIcon } from '@/assets/icons'
 import { ButtonWithIcon } from '@/components/button-with-icon'
+import type { Icon } from '@/~types/elements'
 import type { OAuthProviderType } from 'next-auth/providers/oauth-types'
 import { signIn } from 'next-auth/react'
 import { useState } from 'react'
