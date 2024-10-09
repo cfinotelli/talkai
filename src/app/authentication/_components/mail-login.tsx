@@ -41,7 +41,7 @@ export const MailLogin = ({ signMode }: MailLoginProps) => {
 					{isLoading && <LoadingSpin />}
 					{signMode === 'sign-in'
 						? 'Entrar com e-mail'
-						: 'Criar com e-mail'}
+						: 'Criar conta com e-mail'}
 				</Button>
 			</div>
 		</form>
