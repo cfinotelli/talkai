@@ -10,12 +10,12 @@ export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID as string,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
     EmailProvider({
       server: {
@@ -26,13 +26,16 @@ export const authOptions: AuthOptions = {
           pass: process.env.EMAIL_SERVER_PASSWORD
         }
       },
-      from: process.env.EMAIL_PROVIDER_FROM
+      from: process.env.EMAIL_FROM
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET as string,
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ session, user }) {
-      session.user = { ...session.user, id: user.id } as { id: string; name: string; email: string };
+      session.user = { ...session.user, id: user?.id } as { id: string; name: string; email: string };
 
       return session;
     },

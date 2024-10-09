@@ -1,3 +1,5 @@
+'use client'
+
 import { GithubIcon, GoogleIcon } from '@/assets/icons'
 import { ButtonWithIcon } from '@/components/button-with-icon'
 import type { Icon } from '@/~types/elements'

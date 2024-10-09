@@ -1,22 +1,14 @@
-'use client'
-
 import { cn } from '@/lib/cn'
 import type { ComponentProps } from 'react'
 import { AuthModes } from './auth-modes'
 import { MailLogin } from './mail-login'
 
-interface UserAuthFormProps extends ComponentProps<'div'> {
-	signMode: 'sign-in' | 'sign-up'
-}
+interface UserAuthFormProps extends ComponentProps<'div'> {}
 
-export const UserAuthForm = ({
-	className,
-	signMode,
-	...props
-}: UserAuthFormProps) => {
+export const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
 	return (
 		<div className={cn('grid gap-6', className)} {...props}>
-			<MailLogin signMode={signMode} />
+			<MailLogin />
 
 			<div className="relative">
 				<div className="absolute inset-0 flex items-center">

@@ -54,6 +54,7 @@ model VerificationToken {
   identifier String
   token      String
   expires    DateTime
+  email      String?
  
   @@unique([identifier, token])
   @@map("verificationtokens")
