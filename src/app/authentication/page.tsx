@@ -10,9 +10,7 @@ const Authentication = () => {
 	const router = useRouter()
 	const { status } = useSession()
 
-	const isAuthenticated = status === 'authenticated'
-
-	if (isAuthenticated) {
+	if (status === 'authenticated') {
 		return router.push('/')
 	}
 
