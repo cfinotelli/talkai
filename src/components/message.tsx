@@ -34,9 +34,11 @@ export const ChatMessage = ({ message, user }: ChatMessageProps) => {
 				<span className="block font-bold text-slate-700">
 					{message.role === 'user' ? user.name : 'Assistente'}
 				</span>
-				{message.content.split('\n').map((message, index) => {
-					return <span key={`msg-${index.toString()}`}>{message}</span>
-				})}
+				{/* biome-ignore lint/complexity/useOptionalChain: <explanation> */}
+				{message.content !== undefined &&
+					message.content.split('\n').map((message, index) => {
+						return <span key={`msg-${index.toString()}`}>{message}</span>
+					})}
 			</p>
 		</div>
 	)

@@ -29,6 +29,8 @@ export const ModalChat = ({ closeModal }: { closeModal: () => void }) => {
 	const [messages, setMessages] = useState<Message[]>([])
 	const [isLoading, setIsLoading] = useState<boolean>(false)
 
+	console.log(messages)
+
 	const schemaChatObject = z.object({
 		prompt: z.string().min(1, 'Please enter a prompt.'),
 	})
